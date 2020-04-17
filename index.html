@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Joker</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="vendor/harvesthq/chosen/chosen.min.css">
+    <style>
+        .error {
+            color: red;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<form id="registration">
+<div class="container">
+<div class="form-group">
+<label for="name">Full name</label>
+<input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter full name">
+<small id="nameHelp" class="form-text text-muted">We'll never share your name with anyone else.</small>
+</div>
+<div class="form-group">
+<label for="email">Email address</label>
+<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+</div>
+<select name="select" data-placeholder="Choose a region" class="chosen-select" id="select" onchange="getCities()"><option></option></select>
+<br/>
+    <div id="selectCityWrap" style="display: none">
+<select name="select" data-placeholder="Choose a city" class="chosen-select2" id="selectCity" onchange="getDistricts()"><option></option></select>
+    </div>
+    <div id="selectDistrictWrap" style="display: none">
+        <select name="select" data-placeholder="Choose a district" class="chosen-select3" id="selectDistrict"><option></option></select>
+    </div>
+<br/>
+<button type="submit" class="btn-lg btn-secondary" onclick="insert()">Register</button>
+</div>
+</form>
+<br/>
+<div class="container">
+<table class="table table-striped" id="table" style="display: none">
+    <thead>
+    <tr>
+        <th scope="col">name</th>
+        <th scope="col">email</th>
+        <th scope="col">territory</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr id="tr">
+        <td id="forName"><p></p></td>
+        <td id="forEmail"><p></p></td>
+        <td id="forTerritory"><p></p></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous">
+</script>
+<script type="text/javascript" src="vendor/harvesthq/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="./controller/script.js"></script>
+</body>
+</html>
