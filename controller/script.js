@@ -4,7 +4,6 @@
         let email = $('#email').val();
         let select = $('#select').val();
         let selectCity = $('#selectCity').val();
-
         $(".error").remove();
 
         if (name.length < 5) {
